@@ -3,8 +3,8 @@ import json
 
 
 cam = cv2.VideoCapture(0)
-cam.set(3, 640)  # set video width
-cam.set(4, 480)  # set video height
+cam.set(3, 640)  # Set video width
+cam.set(4, 480)  # Set video height
 faceDetector = cv2.CascadeClassifier('haarcascade.xml')
 
 faceId = input('\n Enter User ID (1, 2, 3, etc...): ')
@@ -15,7 +15,7 @@ print("\n [INFO] Wait the minutes ...")
 with open('dataset.json', 'r') as jsonFile:  # Load from json file
     data = json.load(jsonFile)
 
-if int(faceId) < len(data):  # e face sample again
+if int(faceId) < len(data):  # Take face sample again
     if faceName != '':
         data[int(faceId)] = faceName
 else:
